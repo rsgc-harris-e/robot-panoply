@@ -3,7 +3,7 @@ void setup() {
   //Create the canvas and robot body
   size(1000, 1000);
   EHRobot EliBot = new EHRobot();
-  EliBot.drawAt(250, 125, 1.0, 1.0); 
+  EliBot.drawAt(0, 0, 1.0, 1.0); 
   // Add code below to make your preferred
   // robot, according to your plan.
   //
