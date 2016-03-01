@@ -113,7 +113,7 @@ fill(255);
       fill(0);
       textAlign(CENTER);
       textSize(16);
-      text("Scarlet has turned on the minions after they don't give her the crown she wants.", 400, 680);
+      text("To be Continued...", 400, 680);
 
     }
     }
