@@ -1,4 +1,5 @@
 int scene = 1;
+
 void setup() {
   //make canvas
   size(1000, 700);
@@ -6,6 +7,11 @@ void setup() {
 void draw() {
   background(100);
   if (scene == 1)
+  { fill(255,225,0);
+    textSize(100);
+    textAlign(CENTER);
+    text("MINIONS", 500, 350);
+  } else if (scene == 2)
   {
     int minionX = 325;
     int minionY = 275;
@@ -40,7 +46,7 @@ void draw() {
       textSize(16);
       text("Minions purpose is to serve a master. They are now searching for their next master to serve.", 400, 680);
     }
-  } else if (scene == 2)
+  } else if (scene == 4)
   {
     int minionX =635;
     int minionY = 275;
@@ -89,20 +95,20 @@ void draw() {
     int counter = 0;
     while (counter < 3)
 
-     
+
     {
-          
+
       fill(255, 0, 0);
       textSize(48);
       text("MINIONS SCENE THREE ", 500, 50);
-    
-    EPRobot scarletbot = new EPRobot();
-    scarletbot.drawAt(200, 80, 1, 1);
-    
-    
-    minionbot.drawAt(minionX + counter * 115, 480 - counter, 0.7, 0.7);
- counter+=1;
-fill(255);
+
+      EPRobot scarletbot = new EPRobot();
+      scarletbot.drawAt(200, 80, 1, 1);
+
+
+      minionbot.drawAt(minionX + counter * 115, 480 - counter, 0.7, 0.7);
+      counter+=1;
+      fill(255);
       ellipse(725, 100, 400, 80);
       fill(0);
       textSize(16);
@@ -114,9 +120,8 @@ fill(255);
       textAlign(CENTER);
       textSize(16);
       text("To be Continued...", 400, 680);
-
     }
-    }
+  }
 }
 void keyPressed() 
 { 
