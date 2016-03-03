@@ -1,18 +1,37 @@
 int scene = 1;
-
+PImage bg;
+PImage bg2;
+PImage bg3;
+PImage bg4;
+int y;
+PImage minionstext;
 void setup() {
   //make canvas
   size(1000, 700);
+  //load first picture background
+  bg = loadImage("minions.jpg");
+  bg.resize(1000, 700);
+  //load second picture background
+  bg2 = loadImage("supremelondon.jpg");
+  bg2.resize(1000, 700);
+  bg3 = loadImage("stage.jpeg");
+  bg3.resize(1000, 700);
+  bg4 = loadImage("londonstreet.jpg");
+  bg4.resize(1000, 700);
+  //load minions title
+  minionstext = loadImage("minionstext.png");
 }
 void draw() {
-  background(100);
+  //draw background
+  background(bg);
   if (scene == 1)
-  { fill(255,225,0);
-    textSize(100);
-    textAlign(CENTER);
-    text("MINIONS", 500, 350);
+  { 
+    //position of minions text
+    image(minionstext, 300, 150);
   } else if (scene == 2)
-  {
+  { 
+    //draw second background
+    background(bg2);
     int minionX = 325;
     int minionY = 275;
     TMRobots minionbot = new TMRobots();
@@ -43,11 +62,12 @@ void draw() {
       rect(0, 650, 1000, 50);
       fill(0);
       textAlign(CENTER);
-      textSize(16);
-      text("Minions purpose is to serve a master. They are now searching for their next master to serve.", 400, 680);
+      textSize(14);
+      text("Minions purpose is to serve a master, they find themselves lost in London. They are now searching for their next master to serve.", 500, 680);
     }
-  } else if (scene == 4)
+  } else if (scene == 3)
   {
+    background(bg3);
     int minionX =635;
     int minionY = 275;
     int scarletX =325;
@@ -84,8 +104,9 @@ void draw() {
       textSize(16);
       text("Scarlet Overkill becomes the Minion's Master as the Minions look to serve her.", 400, 680);
     }
-  } else if (scene == 3)
+  } else if (scene == 4)
   {
+    background(bg4);
     int minionX =735;
     int minionY = 275;
     int scarletX =325;
@@ -103,6 +124,7 @@ void draw() {
       text("MINIONS SCENE THREE ", 500, 50);
 
       EPRobot scarletbot = new EPRobot();
+      stroke(1);
       scarletbot.drawAt(200, 80, 1, 1);
 
 
@@ -119,11 +141,33 @@ void draw() {
       fill(0);
       textAlign(CENTER);
       textSize(16);
-      text("To be Continued...", 400, 680);
+      text("The minions didn't give the crown back to scarlet which resulted in her getting very angry.", 400, 680);
+      noStroke();
+fill(212,175,55);
+rect(750,425,150,50);
+triangle(750,425,780,425,750,375);
+triangle(900,425,870,425,900,375);
+triangle(800,425,850,425,825,375);
+fill(50,205,50);
+ellipse(760,415,15,15);
+fill(255,255,0);
+ellipse(890,415,15,15);
+fill(255,0,0);
+ellipse(825,415,20,20);
+fill(0,0,255);
+ellipse(765,450,20,20);
+ellipse(795,450,20,20);
+ellipse(825,450,20,20);
+ellipse(855,450,20,20);
+ellipse(885,450,20,20);
+}
     }
-  }
+   
+     
+  
 }
 void keyPressed() 
 { 
   scene +=1;
+}
 }
