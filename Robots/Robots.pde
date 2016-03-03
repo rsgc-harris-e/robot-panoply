@@ -30,7 +30,11 @@ void draw() {
   //draw background
   background(bg);
   if (scene == 1)
-  { 
+  {  
+    fill(0);
+    textFont(font);
+    textSize(20);
+    text("By Eli Harris", 850, 50);
     //position of minions text
     image(minionstext, 300, 150);
   } else if (scene == 2)
@@ -175,8 +179,14 @@ void draw() {
     textAlign(CENTER);
     text("To be continued...", 500, 100);
   }
+
+  print(frameCount);
+  if (frameCount % 180 == 0) {
+    scene +=1;
+  }
+  saveFrame("eli-####.png");
 }
+
 void keyPressed() 
-{ 
-  scene +=1;
+{
 }
