@@ -3,8 +3,10 @@ PImage bg;
 PImage bg2;
 PImage bg3;
 PImage bg4;
+PImage end;
 int y;
 PImage minionstext;
+PFont font;
 void setup() {
   //make canvas
   size(1000, 700);
@@ -18,8 +20,11 @@ void setup() {
   bg3.resize(1000, 700);
   bg4 = loadImage("londonstreet.jpg");
   bg4.resize(1000, 700);
+  end = loadImage("end.jpeg");
+  end.resize(1000, 700);
   //load minions title
   minionstext = loadImage("minionstext.png");
+  font = createFont("Zorque.ttf", 100);
 }
 void draw() {
   //draw background
@@ -142,32 +147,36 @@ void draw() {
       textAlign(CENTER);
       textSize(16);
       text("The minions didn't give the crown back to scarlet which resulted in her getting very angry.", 400, 680);
+      //make crown
       noStroke();
-fill(212,175,55);
-rect(750,425,150,50);
-triangle(750,425,780,425,750,375);
-triangle(900,425,870,425,900,375);
-triangle(800,425,850,425,825,375);
-fill(50,205,50);
-ellipse(760,415,15,15);
-fill(255,255,0);
-ellipse(890,415,15,15);
-fill(255,0,0);
-ellipse(825,415,20,20);
-fill(0,0,255);
-ellipse(765,450,20,20);
-ellipse(795,450,20,20);
-ellipse(825,450,20,20);
-ellipse(855,450,20,20);
-ellipse(885,450,20,20);
-}
+      fill(212, 175, 55);
+      rect(750, 425, 150, 50);
+      triangle(750, 425, 780, 425, 750, 375);
+      triangle(900, 425, 870, 425, 900, 375);
+      triangle(800, 425, 850, 425, 825, 375);
+      fill(50, 205, 50);
+      ellipse(760, 415, 15, 15);
+      fill(255, 255, 0);
+      ellipse(890, 415, 15, 15);
+      fill(255, 0, 0);
+      ellipse(825, 415, 20, 20);
+      fill(0, 0, 255);
+      ellipse(765, 450, 20, 20);
+      ellipse(795, 450, 20, 20);
+      ellipse(825, 450, 20, 20);
+      ellipse(855, 450, 20, 20);
+      ellipse(885, 450, 20, 20);
     }
-   
-     
-  
+  } else if (scene == 5)
+  { 
+    background(end);
+    fill(0);
+    textFont(font);
+    textAlign(CENTER);
+    text("To be continued...", 500, 100);
+  }
 }
 void keyPressed() 
 { 
   scene +=1;
-}
 }
